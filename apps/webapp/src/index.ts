@@ -1,26 +1,8 @@
-import { Hono } from 'hono'
-import { useWorkersLogger } from 'workers-tagged-logger'
+import { Hono } from 'hono';
+import { serveStatic } from 'hono/cloudflare-workers';
 
-import { withNotFound, withOnError } from '@repo/hono-helpers'
+const app = new Hono();
 
-import type { App } from './context'
+app.use('*', serveStatic({ root: './' }));
 
-const app = new Hono<App>()
-	.use(
-		'*',
-		// middleware
-		(c, next) =>
-			useWorkersLogger(c.env.NAME, {
-				environment: c.env.ENVIRONMENT,
-				release: c.env.SENTRY_RELEASE,
-			})(c, next)
-	)
-
-	.onError(withOnError())
-	.notFound(withNotFound())
-
-	.get('/', async (c) => {
-		return c.text('hello, world!')
-	})
-
-export default app
+export default app;
