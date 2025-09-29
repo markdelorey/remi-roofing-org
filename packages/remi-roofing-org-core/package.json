@@ -1,0 +1,22 @@
+{
+	"name": "@repo/remi-roofing-org-core",
+	"version": "0.1.0",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"main": "src/index.ts",
+	"scripts": {
+		"check:lint": "run-eslint",
+		"check:types": "run-tsc",
+		"test": "run-vitest"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@cloudflare/vitest-pool-workers": "0.9.7",
+		"@cloudflare/workers-types": "4.20250926.0",
+		"@repo/eslint-config": "workspace:*",
+		"@repo/tools": "workspace:*",
+		"@repo/typescript-config": "workspace:*",
+		"vitest": "3.2.4"
+	}
+}
