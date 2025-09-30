@@ -17,8 +17,9 @@ export default defineConfig({
 		},
 	],
 	server: {
+		port: 7000,
 		proxy: {
-			'/api': 'http://127.0.0.1:8787',
+			'/api': 'http://1227.0.0.1:8787',
 		},
 	},
 });
