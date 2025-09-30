@@ -5,13 +5,13 @@
 	"sideEffects": false,
 	"type": "module",
 	"scripts": {
-		"build": "vite build",
+		"build": "run-vite-build",
 		"check:lint": "run-eslint",
 		"check:types": "run-tsc",
 		"deploy": "run-wrangler-deploy",
-		"dev": "vite dev",
+		"dev": "run-vite-dev",
 		"fix:workers-types": "run-wrangler-types",
-		"preview": "vite preview",
+		"preview": "run-vite-preview",
 		"test": "run-vitest"
 	},
 	"dependencies": {
