@@ -1,6 +1,4 @@
 
-@custom-variant dark (&:is(.dark *));
-
 /* Tailwind CSS directives */
 @tailwind base;
 @tailwind components;
